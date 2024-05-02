@@ -17,6 +17,17 @@ spec:
     spec:
       containers:
       - name: user-container
-        image: tanush128/user:v1.01
+        image: tanush128/user:0.0.1-2cdd3e2
         imagePullPolicy: Always
-       
+        ports:
+         - containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
