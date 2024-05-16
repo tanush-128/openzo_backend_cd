@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: notification-container
-        image: tanush128/notification:latest
+        image: tanush128/notification:0.0.1-9cdf85b
        
