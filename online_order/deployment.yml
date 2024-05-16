@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: online_order-deployment
+  name: onlineorder-deployment
   labels:
-    app: online_order-deployment
+    app: onlineorder-deployment
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: online_order-deployment
+      app: onlineorder-deployment
   template:
     metadata:
       labels:
-        app: online_order-deployment
+        app: onlineorder-deployment
     spec:
       containers:
       - name: online_order-container
