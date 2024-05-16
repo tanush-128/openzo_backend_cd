@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-deployment
+  labels:
+    app: notification-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-deployment
+  template:
+    metadata:
+      labels:
+        app: notification-deployment
+    spec:
+      containers:
+      - name: notification-container
+        notification: tanush128/notification:latest
+       

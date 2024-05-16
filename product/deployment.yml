@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-deployment
+  labels:
+    app: product-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-deployment
+  template:
+    metadata:
+      labels:
+        app: product-deployment
+    spec:
+      containers:
+      - name: product-container
+        image: tanush128/product:0.0.1-1a26964
+       

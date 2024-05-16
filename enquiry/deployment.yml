@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enquiry-deployment
+  labels:
+    app: enquiry-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enquiry-deployment
+  template:
+    metadata:
+      labels:
+        app: enquiry-deployment
+    spec:
+      containers:
+      - name: enquiry-container
+        image: tanush128/enquiry:0.0.1-1a26964
+       

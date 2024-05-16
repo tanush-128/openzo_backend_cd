@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sale-deployment
+  labels:
+    app: sale-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sale-deployment
+  template:
+    metadata:
+      labels:
+        app: sale-deployment
+    spec:
+      containers:
+      - name: sale-container
+        image: tanush128/sale:0.0.1-1a26964
+       

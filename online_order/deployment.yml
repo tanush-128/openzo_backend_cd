@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: online_order-deployment
+  labels:
+    app: online_order-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: online_order-deployment
+  template:
+    metadata:
+      labels:
+        app: online_order-deployment
+    spec:
+      containers:
+      - name: online_order-container
+        image: tanush128/online_order:0.0.1-1a26964
+       
