@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: enquiry-container
-        image: tanush128/enquiry:0.0.1-1a26964
+        image: tanush128/enquiry:0.0.1-bae5616
        
