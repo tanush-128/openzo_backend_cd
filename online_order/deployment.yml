@@ -16,6 +16,6 @@ spec:
         app: onlineorder-deployment
     spec:
       containers:
-      - name: online_order-container
+      - name: onlineorder-container
         image: tanush128/online_order:0.0.1-b11687c
        
