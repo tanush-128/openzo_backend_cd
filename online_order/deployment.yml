@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: online_order-container
-        image: tanush128/online_order:0.0.1-1a26964
+        image: tanush128/online_order:0.0.1-b11687c
        
