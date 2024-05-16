@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: product-container
-        image: tanush128/product:0.0.1-1a26964
+        image: tanush128/product:0.0.1-e9114b8
        
