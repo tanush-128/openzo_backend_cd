@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: image-container
-        image: tanush128/image:latest
+        image: tanush128/image:0.0.1-f5313db
        
