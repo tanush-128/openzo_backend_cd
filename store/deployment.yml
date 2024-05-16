@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - name: store-container
-        image: tanush128/store:0.0.1-d13f1ff
+        image: tanush128/store:0.0.1-add4fe9
        
