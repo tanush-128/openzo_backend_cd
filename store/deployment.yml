@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: store-container
-        image: tanush128/store:0.0.1-add4fe9
+        image: tanush128/store:0.0.1-825828e
         resources:
           limits:
             cpu: "1"
