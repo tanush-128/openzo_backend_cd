@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: common-config
+data:
+  common-config.yaml: |
+    USER_GRPC: "usergrpc:50051"
+    STORE_GRPC: "storegrpc:50052"
+    NOTIFICATION_GRPC: "notificationgrpc:50053"
+    IMAGE_GRPC: "imagegrpc:50055"
+    PRODUCT_GRPC: "productgrpc:50056"
+    
