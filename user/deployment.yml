@@ -29,7 +29,7 @@ spec:
             memory: "256Mi"
         volumeMounts:
             - name: config-volume
-              mountPath: /app/config
+              mountPath: /go/src/app/config/config.yaml
               subPath: config.yaml    
       volumes:
         - name: config-volume
