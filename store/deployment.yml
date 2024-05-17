@@ -25,6 +25,8 @@ spec:
         #   requests:
         #     cpu: "0.5"
         #     memory: "256Mi"
+        
+        
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
