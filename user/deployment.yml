@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: user-container
-        image: tanush128/user:0.0.1-4eb5d25
+        image: tanush128/user:0.0.1-e8fa96a
         ports:
          - containerPort: 8080
         resources:
