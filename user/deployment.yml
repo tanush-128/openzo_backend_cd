@@ -7,6 +7,7 @@ metadata:
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: user-deployment
@@ -18,15 +19,6 @@ spec:
       containers:
       - name: user-container
         image: tanush128/user:0.0.1-e8fa96a
-        ports:
-         - containerPort: 8080
-        resources:
-          limits:
-            cpu: "1"
-            memory: "512Mi"
-          requests:
-            cpu: "0.5"
-            memory: "256Mi"
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
@@ -48,20 +40,6 @@ spec:
               - key: common-config.yaml
                 path: common-config.yaml
 
-# ---
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: usergrpc
-
-# spec:
-#   selector:
-#     app: user-deployment
-#   ports:
-#     - targetPort: 50051
-#       port: 50051
-     
 ---
 
 apiVersion: v1
@@ -73,11 +51,9 @@ spec:
   selector:
     app: user-deployment
   ports:
-    - name:  http
-      targetPort: 8080
+    - targetPort: 8080
       port: 8080
-    - name:  grpc
-      targetPort: 50051
+    - targetPort: 50051
       port: 50051  
 
 ---

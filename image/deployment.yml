@@ -7,6 +7,7 @@ metadata:
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: image-deployment
@@ -15,16 +16,29 @@ spec:
       labels:
         app: image-deployment
     spec:
-            containers:
-            - name: image-container
-              image: tanush128/image:0.0.1-f5313db
-              resources:
-                limits:
-                  cpu: "1"
-                  memory: "512Mi"
-                requests:
-                  cpu: "0.5"
-                  memory: "256Mi"
+      containers:
+      - name: image-container
+        image: tanush128/image:0.0.1-e8fa96a
+        volumeMounts:
+            - name: config-volume
+              mountPath: /go/src/app/config/config.yaml
+              subPath: config.yaml   
+            - name: common-config-volume
+              mountPath: /go/src/app/config/common-config.yaml
+              subPath: common-config.yaml   
+      volumes:
+        - name: config-volume
+          configMap:
+            name: image-config
+            items:
+              - key: config.yaml
+                path: config.yaml  
+        - name: common-config-volume
+          configMap:
+            name: common-config
+            items:
+              - key: common-config.yaml
+                path: common-config.yaml
 
 ---
 
@@ -37,6 +51,20 @@ spec:
   selector:
     app: image-deployment
   ports:
-    - targetPort: 50055
-      port: 50055
-     
+    - targetPort: 50051
+      port: 50051  
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: image-config
+data:
+  config.yaml: |
+    DB_URL: "admin:WRXqYoTG9aLP4CL6gtoF@tcp(database-2.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
+    DB_NAME: "image_service_db"
+    GRPC_PORT: "50051"
+    MODE: "dev"
+
+

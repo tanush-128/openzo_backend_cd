@@ -5,8 +5,8 @@ metadata:
 data:
   common-config.yaml: |
     USER_GRPC: "user-service:50051"
-    STORE_GRPC: "storegrpc:50052"
-    NOTIFICATION_GRPC: "notificationgrpc:50053"
-    IMAGE_GRPC: "image-service:50055"
-    PRODUCT_GRPC: "productgrpc:50056"
+    STORE_GRPC: "store-service:50051"
+    NOTIFICATION_GRPC: "notification-service:50051"
+    IMAGE_GRPC: "image-service:50051"
+    PRODUCT_GRPC: "product-service:50051"
     

@@ -7,6 +7,7 @@ metadata:
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: sale-deployment
@@ -17,5 +18,54 @@ spec:
     spec:
       containers:
       - name: sale-container
-        image: tanush128/sale:0.0.1-9f6c361
-       
+        image: tanush128/sale:0.0.1-e8fa96a
+        volumeMounts:
+            - name: config-volume
+              mountPath: /go/src/app/config/config.yaml
+              subPath: config.yaml   
+            - name: common-config-volume
+              mountPath: /go/src/app/config/common-config.yaml
+              subPath: common-config.yaml   
+      volumes:
+        - name: config-volume
+          configMap:
+            name: sale-config
+            items:
+              - key: config.yaml
+                path: config.yaml  
+        - name: common-config-volume
+          configMap:
+            name: common-config
+            items:
+              - key: common-config.yaml
+                path: common-config.yaml
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: sale-service
+
+spec:
+  selector:
+    app: sale-deployment
+  ports:
+    - targetPort: 8080
+      port: 8080
+    
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sale-config
+data:
+  config.yaml: |
+    DB_URL: "admin:WRXqYoTG9aLP4CL6gtoF@tcp(database-2.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
+    DB_NAME: "sale_service_db"
+    HTTP_PORT: "8080"
+    MODE: "dev"
+
+

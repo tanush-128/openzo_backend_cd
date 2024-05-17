@@ -7,6 +7,7 @@ metadata:
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: store-deployment
@@ -17,16 +18,7 @@ spec:
     spec:
       containers:
       - name: store-container
-        image: tanush128/store:0.0.1-825828e
-        # resources:
-        #   limits:
-        #     cpu: "1"
-        #     memory: "512Mi"
-        #   requests:
-        #     cpu: "0.5"
-        #     memory: "256Mi"
-        
-        
+        image: tanush128/store:0.0.1-e8fa96a
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
@@ -46,8 +38,23 @@ spec:
             name: common-config
             items:
               - key: common-config.yaml
-                path: common-config.yaml       
+                path: common-config.yaml
 
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-service
+
+spec:
+  selector:
+    app: store-deployment
+  ports:
+    - targetPort: 8080
+      port: 8080
+    - targetPort: 50051
+      port: 50051
 
 ---
 
@@ -58,9 +65,9 @@ metadata:
 data:
   config.yaml: |
     DB_URL: "admin:WRXqYoTG9aLP4CL6gtoF@tcp(database-2.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
-    DB_NAME: "user_service_db"
-    HTTP_PORT : "8081"
-    GRPC_PORT : "50052"
+    DB_NAME: "store_service_db"
+    HTTP_PORT: "8080"
+    GRPC_PORT: "50051"
     MODE: "dev"
 
 

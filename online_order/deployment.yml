@@ -1,21 +1,71 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: onlineorder-deployment
+  name: online-order-deployment
   labels:
-    app: onlineorder-deployment
+    app: online-order-deployment
 
 spec:
   replicas: 1
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: onlineorder-deployment
+      app: online-order-deployment
   template:
     metadata:
       labels:
-        app: onlineorder-deployment
+        app: online-order-deployment
     spec:
       containers:
-      - name: onlineorder-container
-        image: tanush128/online_order:0.0.1-b11687c
-       
+      - name: online-order-container
+        image: tanush128/online_order:0.0.1-e8fa96a
+        volumeMounts:
+            - name: config-volume
+              mountPath: /go/src/app/config/config.yaml
+              subPath: config.yaml   
+            - name: common-config-volume
+              mountPath: /go/src/app/config/common-config.yaml
+              subPath: common-config.yaml   
+      volumes:
+        - name: config-volume
+          configMap:
+            name: online-order-config
+            items:
+              - key: config.yaml
+                path: config.yaml  
+        - name: common-config-volume
+          configMap:
+            name: common-config
+            items:
+              - key: common-config.yaml
+                path: common-config.yaml
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: online-order-service
+
+spec:
+  selector:
+    app: online-order-deployment
+  ports:
+    - targetPort: 8080
+      port: 8080
+ 
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: online-order-config
+data:
+  config.yaml: |
+    DB_URL: "admin:WRXqYoTG9aLP4CL6gtoF@tcp(database-2.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
+    DB_NAME: "online-order_service_db"
+    HTTP_PORT: "8080"
+    MODE: "dev"
+
+
