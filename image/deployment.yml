@@ -15,7 +15,28 @@ spec:
       labels:
         app: image-deployment
     spec:
-      containers:
-      - name: image-container
-        image: tanush128/image:0.0.1-f5313db
-       
+            containers:
+            - name: image-container
+              image: tanush128/image:0.0.1-f5313db
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: "512Mi"
+                requests:
+                  cpu: "0.5"
+                  memory: "256Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-service
+
+spec:
+  selector:
+    app: image-deployment
+  ports:
+    - targetPort: 50055
+      port: 50055
+     
