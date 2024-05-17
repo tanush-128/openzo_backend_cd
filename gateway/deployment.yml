@@ -1,55 +1,52 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-microservices-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-headers: "Authorization, Content-Type"
+  name: api-gateway-ingress
 spec:
   rules:
-    - http:
-        paths:
-          - path: /users(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: user-service
-                port:
-                  number: 8080
-          - path: /stores(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: store-service
-                port:
-                  number: 8080
-          - path: /products(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: product-service
-                port:
-                  number: 8080
-          - path: /sales(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: sale-service
-                port:
-                  number: 8080
-          - path: /online_orders(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: online-order-service
-                port:
-                  number: 8080
-          - path: /enquiry(/|$)(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: enquiry-service
-                port:
-                  number: 8080
+  - host:  # Define your desired hostname here
+    http:
+      paths:
+      - path: /users/*
+        pathType: Prefix  # Explicitly set path matching type
+        backend:
+          service:
+            name: user-service
+            port:
+              number: 8080
+      - path: /stores/*
+        pathType: Prefix
+        backend:
+          service:
+            name: store-service
+            port:
+              number: 8080
+      - path: /products/*
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 8080
+      - path: /sales/*
+        pathType: Prefix
+        backend:
+          service:
+            name: sale-service
+            port:
+              number: 8080
+      - path: /online_orders/*
+        pathType: Prefix
+        backend:
+          service:
+            name: onlineorder-service
+            port:
+              number: 8080
+      - path: /enquiry/*
+        pathType: Prefix
+        backend:
+          service:
+            name: enquiry-service
+            port:
+              number: 8080
+  # Add additional paths for other microservices here
