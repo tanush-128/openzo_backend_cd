@@ -51,10 +51,12 @@ spec:
   selector:
     app: user-deployment
   ports:
-    - targetPort: 8080
+    - name: http 
+      targetPort: 8080
       port: 8080
-    - targetPort: 50051
-      port: 50051  
+    - name: grpc 
+      targetPort: 50051
+      port: 50051
 
 ---
 
