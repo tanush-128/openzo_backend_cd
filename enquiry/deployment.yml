@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: enquiry-container
-        image: tanush128/enquiry:0.0.1-e8fa96a
+        image: tanush128/enquiry:0.0.1-bbd0add
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
