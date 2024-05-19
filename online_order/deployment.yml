@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: online-order-container
-        image: tanush128/online_order:0.0.1-4b7ce7f
+        image: tanush128/online_order:0.0.1-29c4ad8
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
