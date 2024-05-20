@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: notification-container
-        image: tanush128/notification:0.0.1-25965ea
+        image: tanush128/notification:0.0.1-7c4213e
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
