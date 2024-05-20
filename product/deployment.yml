@@ -65,10 +65,10 @@ metadata:
   name: product-config
 data:
   config.yaml: |
-    DB_URL: "admin:WRXqYoTG9aLP4CL6gtoF@tcp(database-2.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
+    DB_URL: "admin:fNsZCbxEMrDNMlPTRthx@tcp(openzo.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
     DB_NAME: "product_service_db"
     HTTP_PORT: "8080"
     GRPC_PORT: "50051"
-    MODE: "dev"
+    MODE: "production"
 
 
