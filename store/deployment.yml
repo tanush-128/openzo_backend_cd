@@ -70,6 +70,6 @@ data:
     DB_NAME: "store_service_db"
     HTTP_PORT: "8080"
     GRPC_PORT: "50051"
-    MODE: "dev"
+    MODE: "production"
 
 
