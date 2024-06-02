@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: websocket-container
-          image: tanush128/websocket:0.0.1-14bdec7
+          image: tanush128/websocket:0.0.1-08709c3
           volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
