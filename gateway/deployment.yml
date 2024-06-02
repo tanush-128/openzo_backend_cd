@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gateway-container
-        image: tanush128/gateway:0.0.1-5d2a32d
+        image: tanush128/gateway:0.0.1-9f3f866
         imagePullPolicy: Always
 
 ---
