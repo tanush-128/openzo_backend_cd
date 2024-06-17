@@ -25,7 +25,10 @@ spec:
               subPath: config.yaml   
             - name: common-config-volume
               mountPath: /go/src/app/config/common-config.yaml
-              subPath: common-config.yaml   
+              subPath: common-config.yaml
+            - name: kafka-config-volume
+              mountPath: /go/src/app/client.properties
+              subPath: client.properties                               
       volumes:
         - name: config-volume
           configMap:
@@ -39,7 +42,12 @@ spec:
             items:
               - key: common-config.yaml
                 path: common-config.yaml
-
+        - name: kafka-config-volume
+          configMap:
+            name: kafka-config
+            items:
+              - key: client.properties
+                path: client.properties
 ---
 
 apiVersion: v1
