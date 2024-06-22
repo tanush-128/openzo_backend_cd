@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: product-container
-        image: tanush128/product:0.0.1-b4e231f
+        image: tanush128/product:0.0.1-f539482
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
