@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: user-container
-        image: tanush128/user:0.0.1-338ec35
+        image: tanush128/user:0.0.1-ed5a989
         volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
