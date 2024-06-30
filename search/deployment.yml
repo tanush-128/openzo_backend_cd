@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: search-container
-          image: tanush128/search:0.0.1-5f49f8d
+          image: tanush128/search:0.0.1-7c5c730
           volumeMounts:
             - name: config-volume
               mountPath: /go/src/app/config/config.yaml
