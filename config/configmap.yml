@@ -17,9 +17,9 @@ metadata:
   name: kafka-config
 data:
   client.properties: |
-    bootstrap.servers=pkc-l7pr2.ap-south-1.aws.confluent.cloud:9092
-    security.protocol=SASL_SSL
-    sasl.mechanisms=PLAIN
-    sasl.username=AUN4YM36VD5G26EU
-    sasl.password=NGlsgKaW6UkfLdx8x1ffSbu/lafyw9JpdrJAaz3GHGOE63DXGzMTxzhxtLGFsib6
-    session.timeout.ms=45000
+      sasl.username=tanush
+      sasl.password=WLwZ36d54rhcmsZPcjeRkghNd9bQFq
+      bootstrap.servers=cq1ucoa10lo33uh7tro0.any.eu-central-1.mpx.prd.cloud.redpanda.com:9092
+      security.protocol=SASL_SSL
+      sasl.mechanisms=SCRAM-SHA-256
+      session.timeout.ms=45000
