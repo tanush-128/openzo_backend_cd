@@ -69,9 +69,12 @@ spec:
   selector:
     app: notification-deployment
   ports:
-    - targetPort: 50051
-      port: 50051  
-
+    - name: http 
+      targetPort: 8080
+      port: 8080
+    - name: grpc 
+      targetPort: 50051
+      port: 50051
 ---
 
 apiVersion: v1
@@ -83,7 +86,7 @@ data:
     DB_URL: "admin:fNsZCbxEMrDNMlPTRthx@tcp(openzo.cro8kayema45.ap-south-1.rds.amazonaws.com)/openzo?charset=utf8&parseTime=True&loc=Local"
     DB_NAME: "notification_service_db"
     GRPC_PORT: "50051"
-    MODE: "production"
+    MODE: "notificationion"
 
 
 ---
