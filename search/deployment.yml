@@ -77,4 +77,4 @@ data:
     MODE: "searchion"
     OPENSEARCH_URL: "https://search-openzo-3zhturezgrijy6fkbqpfkcdu5y.ap-south-1.es.amazonaws.com"
     OPENSEARCH_PASSWORD: "8309300581@Om"
-    OPENSEARCH_USERNAME: "admin"
+    OPENSEARCH_USERNAME: "tanush"
