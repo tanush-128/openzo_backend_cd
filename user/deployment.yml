@@ -79,5 +79,7 @@ data:
     HTTP_PORT: "8080"
     GRPC_PORT: "50051"
     MODE: "production"
+    SMS_API_KEY: "fae85dd6-50a7-11ef-8b60-0200cd936042"
+
 
 
