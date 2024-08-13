@@ -18,8 +18,8 @@ metadata:
 data:
   client.properties: |
       sasl.username=tanush
-      sasl.password=Rkx7z30toxrkFWVPHB791E0BHZwqAN
-      bootstrap.servers=cq9lvt8nnlous59uuh00.any.eu-central-1.mpx.prd.cloud.redpanda.com:9092
+      sasl.password=7HLFEgSJAMlfOJmP2iI2A2YZDjAntW
+      bootstrap.servers=cqte26lcd9t5p731p5e0.any.eu-central-1.mpx.prd.cloud.redpanda.com:9092
       security.protocol=SASL_SSL
       sasl.mechanisms=SCRAM-SHA-256
       session.timeout.ms=45000
