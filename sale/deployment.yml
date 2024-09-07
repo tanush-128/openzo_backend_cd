@@ -20,7 +20,7 @@ spec:
       - name: sale-container
         image: tanush128/sale:0.0.1-902d774
         volumeMounts:
-            - name: config-volumedss
+            - name: config-volume
               mountPath: /app/config/config.yaml
               subPath: config.yaml   
             - name: common-config-volume
