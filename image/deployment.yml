@@ -21,10 +21,10 @@ spec:
         image: tanush128/image:0.0.1-e2e3d58
         volumeMounts:
             - name: config-volume
-              mountPath: /go/src/app/config/config.yaml
+              mountPath: /app/config/config.yaml
               subPath: config.yaml   
             - name: common-config-volume
-              mountPath: /go/src/app/config/common-config.yaml
+              mountPath: /app/config/common-config.yaml
               subPath: common-config.yaml   
       volumes:
         - name: config-volume

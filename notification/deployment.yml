@@ -21,16 +21,16 @@ spec:
         image: tanush128/notification:0.0.1-d019a44
         volumeMounts:
             - name: config-volume
-              mountPath: /go/src/app/config/config.yaml
+              mountPath: /app/config/config.yaml
               subPath: config.yaml   
             - name: common-config-volume
-              mountPath: /go/src/app/config/common-config.yaml
+              mountPath: /app/config/common-config.yaml
               subPath: common-config.yaml 
             - name: kafka-config-volume
-              mountPath: /go/src/app/client.properties
+              mountPath: /app/client.properties
               subPath: client.properties                  
             - name: firebase-config-volume
-              mountPath: /go/src/app/firebase-config.json
+              mountPath: /app/firebase-config.json
               subPath: firebase-config.json
       volumes:
         - name: config-volume

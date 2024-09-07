@@ -21,13 +21,13 @@ spec:
         image: tanush128/enquiry:0.0.1-b7c6513
         volumeMounts:
             - name: config-volume
-              mountPath: /go/src/app/config/config.yaml
+              mountPath: /app/config/config.yaml
               subPath: config.yaml   
             - name: common-config-volume
-              mountPath: /go/src/app/config/common-config.yaml
+              mountPath: /app/config/common-config.yaml
               subPath: common-config.yaml
             - name: kafka-config-volume
-              mountPath: /go/src/app/client.properties
+              mountPath: /app/client.properties
               subPath: client.properties                               
       volumes:
         - name: config-volume
