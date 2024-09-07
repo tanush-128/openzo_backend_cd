@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: ad-container
-        image: tanush128/ad:0.0.1-8884d9e
+        image: tanush128/ad:0.0.1-96322d1
         volumeMounts:
             - name: config-volume
               mountPath: /app/config/config.yaml
