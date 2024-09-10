@@ -18,8 +18,10 @@ metadata:
 data:
   client.properties: |
       sasl.username=tanush
-      sasl.password=DJLs3lSMXs28MCFrkEEthJv40vr0Bl
-      bootstrap.servers=cr6m0vvun5e7uleuvna0.any.eu-central-1.mpx.prd.cloud.redpanda.com:9092
+      sasl.password=OvFbchTznWQsttZL3qJ1j4HiWfgzzO
+      bootstrap.servers=ec2-52-66-121-67.ap-south-1.compute.amazonaws.com:19092
       security.protocol=SASL_SSL
       sasl.mechanisms=SCRAM-SHA-256
       session.timeout.ms=45000
+      security.protocol=PLAINTEXT      
+     
