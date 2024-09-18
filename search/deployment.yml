@@ -75,6 +75,6 @@ data:
     HTTP_PORT: "8080"
     GRPC_PORT: "50051"
     MODE: "searchion"
-    OPENSEARCH_URL: "https://search-openzo-3zhturezgrijy6fkbqpfkcdu5y.ap-south-1.es.amazonaws.com"
+    OPENSEARCH_URL: "https://search-openzo-2-mxzslwgozj6jr4poswusgi2l3u.ap-south-1.es.amazonaws.com/"
     OPENSEARCH_PASSWORD: "8309300581@Om"
     OPENSEARCH_USERNAME: "tanush"
