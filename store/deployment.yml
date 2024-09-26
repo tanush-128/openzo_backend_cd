@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: store-container
-        image: tanush128/store:0.0.1-6222a4f
+        image: tanush128/store:0.0.1-6cf194c
         volumeMounts:
             - name: config-volume
               mountPath: /app/config/config.yaml
